@@ -8,7 +8,10 @@
  * @internal
  */
 
-import fetch from 'cross-fetch';
+import crossFetch from 'cross-fetch';
+
+const fetch =
+  typeof globalThis.fetch === 'function' ? globalThis.fetch : crossFetch;
 
 /** Common configuration for making calls to Yext APIs. */
 export interface Config {

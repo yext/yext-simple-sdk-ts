@@ -25,3 +25,16 @@ import {KnowledgeGraphApi} from '@yext/api';
   const kg = new KnowledgeGraphApi({apiKey: 'YOUR_API_KEY'});
   const entity = await kg.getEntity('ENTITY_ID');
 ```
+
+### Deno
+
+This package can be used on [Deno] via the [esm.sh] CDN.
+
+[Deno]: https://deno.land/
+[esm.sh]: https://esm.sh/
+
+```TypeScript
+import {KnowledgeGraphApi} from 'https://esm.sh/@yext/api';
+const kg = new KnowledgeGraphApi({apiKey: 'YOUR_API_KEY'});
+const entity = await kg.getEntity('ENTITY_ID');
+```
