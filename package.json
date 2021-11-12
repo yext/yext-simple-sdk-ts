@@ -5,9 +5,10 @@
   "scripts": {
     "compile": "tsc",
     "docs": "typedoc",
+    "notices": ". scripts/update_notices.sh",
     "test": "echo 'No tests have been written yet.'",
-    "lint": "gts lint && typedoc --emit none",
-    "fix": "gts fix && typedoc --emit none",
+    "lint": "gts lint && typedoc --emit none && npm run notices -- --dry-run",
+    "fix": "gts fix && typedoc --emit none && npm run notices",
     "clean": "gts clean",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
@@ -23,6 +24,7 @@
     "cross-fetch": "^3.1.4"
   },
   "devDependencies": {
+    "generate-license-file": "^1.2.0",
     "gts": "^3.1.0",
     "typedoc": "^0.22.7",
     "typescript": "^4.4.4"
